@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "name": "Portfolio website",
+      "type": "tech",
+      "description": "Built my own portfolio website using Next app",
+      "tags":["Next.js", "Webdev"],
+      "year":2025,
+      "url":"",
+      "image":"/images/portfolio-website.png"
+    },
+    {
+        "id": 2,
+        "name": "Portfolio website2",
+        "type": "tech",
+        "description": "Built my own portfolio website using Next app",
+        "tags":["Next.js", "Webdev"],
+        "year":2025,
+        "url":"https://github.com/Strange-14M605/Portfolio",
+        "image":"/images/portfolio-website.png"
+      }
+  ]
+  
