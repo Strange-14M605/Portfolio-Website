@@ -1,37 +1,82 @@
-"use client";
+import React, { useEffect, useState } from "react";
 
-import { useEffect, useState } from "react";
+const Blog = () => {
+  const [resources, setResources] = useState([]);
 
-export default function Blog() {
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
+  useEffect(() => {  //called on page load or reload
     async function fetchNotionData() {
-      const res = await fetch("/api/notion", { method: "POST" });
+      const res = await fetch("/api/notion", { method: "GET" });
       const data = await res.json();
-      setPosts(data);
+      setResources(data.resources);
     }
 
     fetchNotionData();
   }, []);
 
-  return (
-    <div>
-      <ul>
-        {posts.map((post, index) => (
-          <li key={index} className="mb-6">
-            <h2 className="text-xl font-semibold">{post.title}</h2>
-            <p className="text-gray-600 text-sm">Date: {post.date}</p>
-            <div className="flex gap-2 mt-1">
-              {post.tags.map((tag, i) => (
-                <span key={i} className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
-                  {tag}
-                </span>
-              ))}
-            </div>
+  const renderBlock = (block, index) => {
+    switch (block.type) {
+      case "heading_1":
+        return (
+          <h1 key={index} className="mb-4 text-2xl font-bold">
+            {block.content}
+          </h1>
+        );
+      case "heading_2":
+        return (
+          <h2 key={index} className="mb-4 text-xl font-semibold">
+            {block.content}
+          </h2>
+        );
+      case "heading_3":
+        return (
+          <h3 key={index} className="mb-4 text-lg font-semibold">
+            {block.content}
+          </h3>
+        );
+      case "callout":
+        return (
+          <div key={index} className="mb-4 p-4 bg-blue-100 rounded-lg">
+            {block.content}
+          </div>
+        );
+      case "code":
+        return (
+          <pre key={index} className="mb-4 p-4 bg-gray-100 rounded-lg">
+            {block.content}
+          </pre>
+        );
+      case "bulleted_list_item":
+        return (
+          <li key={index} className="mb-4 list-disc pl-5">
+            {block.content}
           </li>
-        ))}
-      </ul>
+        );
+      case "paragraph":
+        return (
+          <p key={index} className="mb-4">
+            {block.content}
+          </p>
+        );
+
+      case "image":
+        return (
+          <img
+            key={index}
+            src={block.url}
+            alt=""
+            className="mb-4 rounded-xl max-w-full"
+          />
+        );
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <div className="p-6 max-w-3xl mx-auto">
+      {resources.map((block, index) => renderBlock(block, index))}
     </div>
   );
-}
+};
+
+export default Blog;
