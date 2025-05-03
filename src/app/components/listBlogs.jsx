@@ -10,7 +10,6 @@ export default function ListBlogs() {
     async function fetchNotionData() {
       const res = await fetch("/api/notion", { method: "POST" });
       const data = await res.json();
-      console.log(data)
       setPosts(data);
     }
 
@@ -22,7 +21,7 @@ export default function ListBlogs() {
       <ul>
         {posts.map((post, index) => (
           <li key={index} className="mb-6">
-            <a href={`/blog/${post.pageId}`}>
+            <a href={`/blog/${post.pageId}?title=${post.title}&date=${post.date}`} className="block p-4 border rounded-lg hover:bg-gray-100 transition">
               <h2 className="text-xl font-semibold">{post.title}</h2>
               <p className="text-gray-600 text-sm">Date: {post.date}</p>
               <div className="flex gap-2 mt-1">

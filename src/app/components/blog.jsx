@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const Blog = ({ id }) => {
+const Blog = ({ id, title, date }) => {
   const [resources, setResources] = useState([]);
 
   useEffect(() => {
@@ -74,6 +74,8 @@ const Blog = ({ id }) => {
 
   return (
     <div className="p-6 max-w-3xl mx-auto">
+      <h1>{title}</h1>
+      <h3>{date}</h3>
       {resources.map((block, index) => renderBlock(block, index))}
     </div>
   );

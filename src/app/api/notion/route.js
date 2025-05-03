@@ -1,6 +1,5 @@
 const notionToken = process.env.NOTION_TOKEN;
 const databaseId = process.env.NOTION_DATABASE_ID;
-const pageId = process.env.PAGE_ID;
 
 export async function POST() {
   
