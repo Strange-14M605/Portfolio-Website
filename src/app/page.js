@@ -2,7 +2,7 @@
 
 //components
 import ListBlogs from "./components/listBlogs";
-import Blog from "./components/blog";
+
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
     
     {/* blogs */}
     <ListBlogs />
-    <Blog />
+    
 
     {/* gallery - future scope*/}
 

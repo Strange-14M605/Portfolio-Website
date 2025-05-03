@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 
-const Blog = () => {
+const Blog = (id) => {
   const [resources, setResources] = useState([]);
 
   useEffect(() => {  //called on page load or reload
     async function fetchNotionData() {
-      const res = await fetch("/api/notion", { method: "GET" });
+      const res = await fetch(`/api/notion?id=${id}`, { method: "GET" });
       const data = await res.json();
       setResources(data.resources);
     }

@@ -26,7 +26,7 @@ export async function POST() {
         title,
         tags,
         date,
-        pageId: page.created_by.id,  //fetch page ID too for future access
+        pageId: page.id,  //fetch page ID too for future access
       };
     });
   
