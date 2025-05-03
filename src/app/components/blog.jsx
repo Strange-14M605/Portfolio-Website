@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 
-const Blog = (id) => {
+const Blog = ({ id }) => {
   const [resources, setResources] = useState([]);
 
-  useEffect(() => {  //called on page load or reload
+  useEffect(() => {
     async function fetchNotionData() {
       const res = await fetch(`/api/notion?id=${id}`, { method: "GET" });
       const data = await res.json();
@@ -11,7 +11,7 @@ const Blog = (id) => {
     }
 
     fetchNotionData();
-  }, []);
+  }, [id]);
 
   const renderBlock = (block, index) => {
     switch (block.type) {

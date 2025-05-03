@@ -35,63 +35,71 @@ export async function POST() {
     });
   }
   
-  import { NextResponse } from 'next/server';
+  // ****************************************************************************************************
+  import { NextResponse } from "next/server";
 
-export async function GET() {
-
-  const response = await fetch(`https://api.notion.com/v1/blocks/${pageId}/children?page_size=100`, {
-    method: "GET",
-    headers: {
-      "Authorization": `Bearer ${notionToken}`,
-      "Notion-Version": "2022-06-28",
-      "Content-Type": "application/json"
+  export async function GET(request) {
+    const { searchParams } = new URL(request.url);
+    const pageId = searchParams.get("id"); // Extract `id` from query params
+  
+    if (!pageId) {
+      return NextResponse.json({ error: "Missing id parameter" }, { status: 400 });
     }
-  });
-
-  const data = await response.json();
-  const resources = [];
-
-  for (const block of data.results) {
-    const type = block.type;
-    const contentItem = { type };
-
-    const richText = block[type]?.rich_text;
-
-    switch (type) {
-      case "heading_1":
-      case "heading_2":
-      case "heading_3":
-      case "callout":
-      case "code":
-      case "bulleted_list_item":
-        if (richText?.length) {
-          contentItem.content = richText.map(rt => rt.plain_text).join("");
-        }
-        break;
-
-      case "paragraph":
-        if (richText?.length) {
-          contentItem.content = richText.map(rt => rt.plain_text).join("");
-          const link = richText.find(rt => rt.text?.link?.url);
-          if (link) {
-            contentItem.link = link.text.link.url;
+  
+    const response = await fetch(`https://api.notion.com/v1/blocks/${pageId}/children?page_size=10000`, {
+      method: "GET",
+      headers: {
+        "Authorization": `Bearer ${notionToken}`,
+        "Notion-Version": "2022-06-28",
+        "Content-Type": "application/json"
+      }
+    });
+  
+    const data = await response.json();
+    const resources = [];
+  
+    for (const block of data.results) {
+      const type = block.type;
+      const contentItem = { type };
+  
+      const richText = block[type]?.rich_text;
+  
+      switch (type) {
+        case "heading_1":
+        case "heading_2":
+        case "heading_3":
+        case "callout":
+        case "code":
+        case "bulleted_list_item":
+          if (richText?.length) {
+            contentItem.content = richText.map(rt => rt.plain_text).join("");
           }
-        }
-        break;
-
-      case "image":
-        if (block.image?.file?.url) {
-          contentItem.url = block.image.file.url;
-        }
-        break;
+          break;
+  
+        case "paragraph":
+          if (richText?.length) {
+            contentItem.content = richText.map(rt => rt.plain_text).join("");
+            const link = richText.find(rt => rt.text?.link?.url);
+            if (link) {
+              contentItem.link = link.text.link.url;
+            }
+          }
+          break;
+  
+        case "image":
+          if (block.image?.file?.url) {
+            contentItem.url = block.image.file.url;
+          }
+          break;
+      }
+  
+      if (Object.keys(contentItem).length > 1) {
+        resources.push(contentItem);
+      }
     }
-
-    if (Object.keys(contentItem).length > 1) {
-      resources.push(contentItem);
-    }
+  
+    return NextResponse.json({ resources });
   }
-
-  return NextResponse.json({ resources });
-}
+  
 
   
