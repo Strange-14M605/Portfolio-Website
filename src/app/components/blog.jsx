@@ -5,7 +5,7 @@ const Blog = ({ id, title, date }) => {
 
   useEffect(() => {
     async function fetchNotionData() {
-      const res = await fetch(`/api/notion?id=${id}`, { method: "GET" });
+      const res = await fetch(`/api/notion?id=${id}`);
       const data = await res.json();
       setResources(data.resources);
     }
@@ -16,69 +16,53 @@ const Blog = ({ id, title, date }) => {
   const renderBlock = (block, index) => {
     switch (block.type) {
       case "heading_1":
-        return (
-          <h1 key={index} className="mb-4 text-2xl font-bold">
-            {block.content}
-          </h1>
-        );
+        return <h3 key={index} className="blog-heading1">{block.content}</h3>;
       case "heading_2":
-        return (
-          <h2 key={index} className="mb-4 text-xl font-semibold">
-            {block.content}
-          </h2>
-        );
+        return <h4 key={index} className="blog-heading2">{block.content}</h4>;
       case "heading_3":
-        return (
-          <h3 key={index} className="mb-4 text-lg font-semibold">
-            {block.content}
-          </h3>
-        );
+        return <h5 key={index} className="blog-heading3">{block.content}</h5>;
       case "callout":
-        return (
-          <div key={index} className="mb-4 p-4 bg-blue-100 rounded-lg">
-            {block.content}
-          </div>
-        );
+        return <div key={index} className="blog-callout">{block.content}</div>;
       case "code":
         return (
-          <pre key={index} className="mb-4 p-4 bg-gray-100 rounded-lg">
-            {block.content}
-          </pre>
+          <pre key={index} className="blog-code">
+            <code>{block.content}</code>
+          </pre>  
         );
       case "bulleted_list_item":
-        return (
-          <li key={index} className="mb-4 list-disc pl-5">
-            {block.content}
-          </li>
-        );
+        return <li key={index} className="blog-list-item">{block.content}</li>;
       case "paragraph":
         return (
-          <p key={index} className="mb-4">
-            {block.content}
+          <p key={index} className="blog-paragraph">
+            {block.link ? (
+              <a href={block.link} target="_blank" rel="noopener noreferrer">
+                {block.content}
+              </a>
+            ) : (
+              block.content
+            )}
           </p>
         );
-
+        
       case "image":
-        return (
-          <img
-            key={index}
-            src={block.url}
-            alt=""
-            className="mb-4 rounded-xl max-w-full"
-          />
-        );
+        return <img key={index} src={block.url} alt="" className="blog-image" />;
       default:
         return null;
     }
   };
 
   return (
-    <div className="p-6 max-w-3xl mx-auto">
-      <h1>{title}</h1>
-      <h3>{date}</h3>
-      {resources.map((block, index) => renderBlock(block, index))}
-    </div>
+    <article className="blog-container">
+      <header className="blog-header">
+        <h1 className="blog-title">{title}</h1>
+        <p className="blog-date">{date}</p>
+      </header>
+      <section className="blog-content">
+        {resources.map((block, index) => renderBlock(block, index))}
+      </section>
+    </article>
   );
 };
 
 export default Blog;
+
