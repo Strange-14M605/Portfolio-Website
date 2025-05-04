@@ -2,28 +2,36 @@
 
 export default function Navbar() {
   return (
-    <nav>
-      <h1>Jova's Digital Garden</h1>
+<nav className="navbar">
+  <h1 className="navbar-title">Jova's Digital Garden</h1>
 
-      {/* dark mode toggle */}
+  {/* Dark mode toggle */}
+  <div className="navbar-toggle">
+    {/* Add your dark mode toggle component here */}
+  </div>
 
-      {/* rss */}
+  {/* RSS feed */}
+  <div className="navbar-rss">
+    {/* Add your RSS component here */}
+  </div>
 
-      {/* github */}
-      <a href="https://github.com/Strange-14M605">
-      <img src="/icons/github.svg" alt="Icon" width="24" height="24" />
-      </a>
+  <div className="social-icons">
+    {/* GitHub */}
+    <a href="https://github.com/Strange-14M605" className="social-icon">
+      <img src="/icons/github.svg" alt="GitHub" width="24" height="24" />
+    </a>
 
-      {/* linkedin */}
-      <a href="https://www.linkedin.com/in/jova-varghese/">
-      <img src="/icons/linkedin.svg" alt="Icon" width="24" height="24" />
-      </a>
+    {/* LinkedIn */}
+    <a href="https://www.linkedin.com/in/jova-varghese/" className="social-icon">
+      <img src="/icons/linkedin.svg" alt="LinkedIn" width="24" height="24" />
+    </a>
 
-      {/* instagram */}
-      {/* <a href="">
-      <img src="/icons/instagram.svg" alt="Icon" width="24" height="24" />
-      </a> */}
+    {/* Instagram (commented out for now) */}
+    {/* <a href="#" className="social-icon">
+      <img src="/icons/instagram.svg" alt="Instagram" width="24" height="24" />
+    </a> */}
+  </div>
+</nav>
 
-    </nav>
   );
 }
