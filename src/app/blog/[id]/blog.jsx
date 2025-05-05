@@ -25,9 +25,17 @@ const Blog = ({ id, title, date }) => {
         return <div key={index} className="blog-callout">{block.content}</div>;
       case "code":
         return (
-          <pre key={index} className="blog-code">
-            <code>{block.content}</code>
-          </pre>  
+          <div key={index} className="code-block-wrapper">
+            <button
+              className="copy-button"
+              onClick={() => navigator.clipboard.writeText(block.content)}
+            >
+              Copy
+            </button>
+            <pre className="blog-code">
+              <code>{block.content}</code>
+            </pre>
+          </div>
         );
       case "bulleted_list_item":
         return <li key={index} className="blog-list-item">{block.content}</li>;

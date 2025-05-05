@@ -4,7 +4,7 @@ import { use } from 'react';
 import { useSearchParams } from "next/navigation";
 
 // components
-import Blog from '@/app/components/blog';
+import Blog from '@/app/blog/[id]/blog';
 
 export default function BlogPost({ params }) {
   const { id } = use(params); 

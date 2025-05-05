@@ -1,7 +1,17 @@
+:root {
+  --bg-color: #eab2b2;
+  --text-color-primary: #1a1a1a;
+  --text-color-secondary: #742020;
+  --accent-color-primary: #b7f889;
+  --accent-color-secondary: #95e772;
+  --code-bg-color: #2e2e2e;
+  --code-text-color: #e5e5e5;
+}
+
 
 html,body{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #eab2b2;
+  background-color:var(--bg-color); ;
   padding: 0%;
   margin: 0% 15%;
 }
@@ -13,11 +23,37 @@ html,body{
   align-items: center;
 }
 
+@media (max-width: 1145px) {
+  .navbar {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 1145px) {
+  html,body{
+    margin: 4%;
+  } 
+  .navbar {
+    flex-direction: column; 
+    padding: 4% 2%; 
+  }
+}
+
 .navbar-title {
   font-size: 1.8rem;
-  color: #181818;
+  color: var(--text-color-primary);
   font-weight: bold;
   margin: 0;
+  text-decoration: none; /* simpler and more effective */
+}
+
+.navbar-title a {
+  text-decoration: none;
+  color: var(--text-color-primary);
+}
+
+.navbar-title a:hover {
+  color: var(--text-color-secondary);
 }
 
 .social-icons {
@@ -49,11 +85,17 @@ html,body{
 
 .intro-text {
   font-size: 1rem;
-  color: #333;
+  color: var(--text-color-primary);
   font-weight: 500;
   line-height: 1.6;
-  max-width: 900px;
+  max-width: 1145px;
   margin: 0 auto;
+}
+
+@media (max-width: 1145px) {
+  .intro-text {
+    text-align: center; /* New */
+  }
 }
 
 /* Blogs Section */
@@ -64,7 +106,7 @@ html,body{
 }
 
 .posts-container {
-  max-width: 900px;
+  max-width: 1145px;
   margin: 0 auto;
 }
 
@@ -75,11 +117,11 @@ html,body{
 
 .post-item {
   padding: 20px;
-  border-top: #333 solid 1px;
+  border-top: var(--text-color-primary) solid 1px;
 }
 
 .post-item:hover {
-  background-color: #b7f889;
+  background-color: var(--accent-color-primary);
 }
 
 .post-link {
@@ -95,13 +137,23 @@ html,body{
 
 .post-title {
   font-size: 1.5rem;
-  color: #333;
+  color: var(--text-color-primary);
   font-weight: bold;
+}
+
+@media (max-width: 1145px) {
+  .post-title{
+    gap: 8px;
+  }
+    .post-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
 }
 
 .post-date {
   font-size: 0.9rem;
-  color: #862b2b;
+  color: var(--text-color-secondary);
   padding-top: 6px;
 }
 
@@ -110,12 +162,12 @@ html,body{
 }
 
 .post-tag {
-  background-color: #95e772;
+  background-color: var(--accent-color-secondary);
   border-radius: 20px;
   padding: 5px 12px;
   margin: 5px;
   font-size: 0.9rem;
-  color: #333;
+  color: var(--text-color-primary);
   display: inline-block;
   transition: background-color 0.3s ease;
 }
@@ -125,7 +177,7 @@ html,body{
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
-  border-top: #111 solid 1px;
+  border-top: var(--text-color-primary) solid 1px;
 }
 
 .blog-header {
@@ -135,12 +187,12 @@ html,body{
 .blog-title {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #222;
+  color: var(--text-color-primary);
 }
 
 .blog-date {
   font-size: 0.9rem;
-  color: #772626;
+  color: var(--text-color-secondary);
   margin-top: 0.5rem;
 }
 
@@ -149,46 +201,48 @@ html,body{
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 1.2rem;
-  color: #333;
+  color: var(--text-color-primary);
+  text-align: justify;
 }
 
 .blog-content p a,
 .blog-paragraph a {
-  color: #333;
+  color: var(--text-color-primary);
   text-decoration: underline;
   transition: color 0.2s ease;
 }
 
 .blog-content p a:hover,
 .blog-paragraph a:hover {
-  color: #7cd652;
+  color: var(--text-color-secondary);
 }
 
 .blog-heading1 {
   font-size: 2rem;
   margin: 1.8rem 0 1rem;
-  color: #111;
+  color: var(--text-color-primary);
 }
 
 .blog-heading2 {
   font-size: 1.6rem;
   margin: 1.5rem 0 0.8rem;
-  color: #222;
+  color: var(--text-color-primary);
 }
 
 .blog-heading3 {
   font-size: 1.3rem;
   margin: 1.2rem 0 0.5rem;
-  color: #333;
+  color: var(--text-color-primary);
 }
 
 .blog-code {
-  background: #f5f5f5;
+  background: var(--code-bg-color);
   padding: 1rem;
   overflow-x:auto;
   margin: 1rem 0;
   font-family: 'Courier New', monospace;
   font-size: 0.75rem;
+  color: var(--code-text-color);
 }
 
 .blog-callout {
@@ -208,4 +262,27 @@ html,body{
 .blog-image {
   max-width: 100%;
   margin: 1rem 0;
+}
+
+
+/* code block css */
+.code-block-wrapper {
+  position: relative;
+}
+
+.copy-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: var(--bg-color);
+  border: none;
+  padding: 4px 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.copy-button:hover {
+  background: #dcdcdc;
 }

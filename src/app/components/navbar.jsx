@@ -3,7 +3,10 @@
 export default function Navbar() {
   return (
 <nav className="navbar">
-  <h1 className="navbar-title">Jova's Digital Garden</h1>
+<h1 className="navbar-title">
+  <a href="/">Jova's Digital Garden</a>
+</h1>
+
 
   {/* Dark mode toggle */}
   <div className="navbar-toggle">
