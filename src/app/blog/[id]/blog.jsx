@@ -39,18 +39,21 @@ const Blog = ({ id, title, date }) => {
         );
       case "bulleted_list_item":
         return <li key={index} className="blog-list-item">{block.content}</li>;
-      case "paragraph":
-        return (
-          <p key={index} className="blog-paragraph">
-            {block.link ? (
-              <a href={block.link} target="_blank" rel="noopener noreferrer">
-                {block.content}
-              </a>
-            ) : (
-              block.content
-            )}
-          </p>
-        );
+        case "paragraph":
+          return (
+            <p key={index} className="blog-paragraph">
+              {block.link ? (
+                <a href={block.link} target="_blank" rel="noopener noreferrer" className="mention-link">
+                  {block.icon && (
+                    <img src={block.icon}/>
+                  )}
+                  {block.content}
+                </a>
+              ) : (
+                block.content
+              )}
+            </p>
+          );        
         
       case "image":
         return <img key={index} src={block.url} alt="" className="blog-image" />;

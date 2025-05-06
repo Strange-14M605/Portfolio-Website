@@ -2,37 +2,43 @@ const notionToken = process.env.NOTION_TOKEN;
 const databaseId = process.env.NOTION_DATABASE_ID;
 
 export async function POST() {
-  
-    const res = await fetch(`https://api.notion.com/v1/databases/${databaseId}/query`, {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${notionToken}`,
-        "Notion-Version": "2022-06-28",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({}),
-    });
-  
-    const data = await res.json();
-  
-    const blogPosts = data.results.map((page) => {
-      const title = page.properties.Page.title[0]?.plain_text || "Untitled";  //returns a string
-      const tags = page.properties.Tags.multi_select.map(tag => tag.name);  //returns an array of strings
-      const lastEdited = new Date(page.properties["Last edited time"].last_edited_time); //returns a date object
-      const date = `${lastEdited.getDate().toString().padStart(2, "0")}/${(lastEdited.getMonth() + 1).toString().padStart(2, "0")}/${lastEdited.getFullYear()}`;  //rewrite date as dd/mm/yyyy, processed as a string
-  
+  const res = await fetch(`https://api.notion.com/v1/databases/${databaseId}/query`, {
+    method: "POST",
+    headers: {
+      "Authorization": `Bearer ${notionToken}`,
+      "Notion-Version": "2022-06-28",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({}),
+  });
+
+  const data = await res.json();
+
+  const blogPosts = data.results
+    .map((page) => {
+      if (!page.properties.Published.checkbox) return null;
+
+      const title = page.properties.Page.title[0]?.plain_text || "Untitled";
+      const tags = page.properties.Tags.multi_select.map(tag => tag.name);
+      const lastEdited = new Date(page.properties["Last edited time"].last_edited_time);
+      const date = `${lastEdited.getDate().toString().padStart(2, "0")}/${(lastEdited.getMonth() + 1).toString().padStart(2, "0")}/${lastEdited.getFullYear()}`;
+      const status = page.properties.Status.status.name;
+
       return {
         title,
         tags,
         date,
-        pageId: page.id,  //fetch page ID too for future access
+        status,
+        pageId: page.id,
       };
-    });
-  
-    return new Response(JSON.stringify(blogPosts), {
-      headers: { "Content-Type": "application/json" },
-    });
-  }
+    })
+    .filter(post => post !== null); // ✅ This removes nulls
+
+  return new Response(JSON.stringify(blogPosts), {
+    headers: { "Content-Type": "application/json" },
+  });
+}
+
   
   // ****************************************************************************************************
   import { NextResponse } from "next/server";
@@ -75,19 +81,38 @@ export async function POST() {
           }
           break;
   
-        case "paragraph":
-          if (richText?.length) {
-            contentItem.content = richText.map(rt => rt.plain_text).join("");
-            const link = richText.find(rt => rt.text?.link?.url);
-            if (link) {
-              contentItem.link = link.text.link.url;
+          case "paragraph":
+            if (richText?.length) {
+              let content = "";
+              let link = null;
+              let iconUrl = null;
+          
+              richText.forEach(rt => {
+                if (rt.type === "mention" && rt.mention?.type === "link_mention") {
+                  const mention = rt.mention.link_mention;
+                  content += mention.title || mention.href;
+                  link = mention.href;
+                  iconUrl = mention.icon_url;
+                } else {
+                  content += rt.plain_text;
+                  if (rt.text?.link?.url) {
+                    link = rt.text.link.url;
+                  }
+                }
+              });
+          
+              contentItem.content = content;
+              if (link) contentItem.link = link;
+              if (iconUrl) contentItem.icon = iconUrl;
             }
-          }
-          break;
+            break;          
   
         case "image":
           if (block.image?.file?.url) {
             contentItem.url = block.image.file.url;
+          }
+          if (block.image?.external?.url) {
+            contentItem.url = block.image.external.url;
           }
           break;
       }
