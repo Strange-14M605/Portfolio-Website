@@ -15,7 +15,7 @@ export default function BlogPost({ params }) {
 
   return (
     <div>
-        <Blog id={id} title={title} date={date} />
+        <Blog id={id} title={title}/>
     </div>
   );
 }

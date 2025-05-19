@@ -1,3 +1,4 @@
+import { NextResponse } from "next/server";
 const notionToken = process.env.NOTION_TOKEN;
 const databaseId = process.env.NOTION_DATABASE_ID;
 
@@ -41,17 +42,9 @@ export async function POST() {
 
   
   // ****************************************************************************************************
-  import { NextResponse } from "next/server";
-
-  export async function GET(request) {
-    const { searchParams } = new URL(request.url);
-    const pageId = searchParams.get("id"); // Extract `id` from query params
   
-    if (!pageId) {
-      return NextResponse.json({ error: "Missing id parameter" }, { status: 400 });
-    }
-  
-    const response = await fetch(`https://api.notion.com/v1/blocks/${pageId}/children?page_size=10000`, {
+  async function getBlocks(pageId){
+    const response = await fetch(`https://api.notion.com/v1/blocks/${pageId}/children?page_size=1000`, {
       method: "GET",
       headers: {
         "Authorization": `Bearer ${notionToken}`,
@@ -59,14 +52,12 @@ export async function POST() {
         "Content-Type": "application/json"
       }
     });
-  
-    const data = await response.json();
+    const data =  await response.json();
     const resources = [];
-  
     for (const block of data.results) {
       const type = block.type;
       const contentItem = { type };
-  
+      const has_children = block.has_children;
       const richText = block[type]?.rich_text;
   
       switch (type) {
@@ -81,31 +72,31 @@ export async function POST() {
           }
           break;
   
-          case "paragraph":
-            if (richText?.length) {
-              let content = "";
-              let link = null;
-              let iconUrl = null;
-          
-              richText.forEach(rt => {
-                if (rt.type === "mention" && rt.mention?.type === "link_mention") {
-                  const mention = rt.mention.link_mention;
-                  content += mention.title || mention.href;
-                  link = mention.href;
-                  iconUrl = mention.icon_url;
-                } else {
-                  content += rt.plain_text;
-                  if (rt.text?.link?.url) {
-                    link = rt.text.link.url;
-                  }
+        case "paragraph":
+          if (richText?.length) {
+            let content = "";
+            let link = null;
+            let iconUrl = null;
+        
+            richText.forEach(rt => {
+              if (rt.type === "mention" && rt.mention?.type === "link_mention") {
+                const mention = rt.mention.link_mention;
+                content += mention.title || mention.href;
+                link = mention.href;
+                iconUrl = mention.icon_url;
+              } else {
+                content += rt.plain_text;
+                if (rt.text?.link?.url) {
+                  link = rt.text.link.url;
                 }
-              });
-          
-              contentItem.content = content;
-              if (link) contentItem.link = link;
-              if (iconUrl) contentItem.icon = iconUrl;
-            }
-            break;          
+              }
+            });
+        
+            contentItem.content = content;
+            if (link) contentItem.link = link;
+            if (iconUrl) contentItem.icon = iconUrl;
+          }
+          break;          
   
         case "image":
           if (block.image?.file?.url) {
@@ -118,10 +109,22 @@ export async function POST() {
       }
   
       if (Object.keys(contentItem).length > 1) {
-        resources.push(contentItem);
-      }
+  if (has_children) {
+    const childBlocks = await getBlocks(block.id);
+    contentItem.children = childBlocks; // <— NEST instead of pushing flat
+  }
+  resources.push(contentItem);
+}
+
     }
+    return resources;
+  }
   
+  export async function GET(request) {
+    const { searchParams } = new URL(request.url);
+    const pageId = searchParams.get("id"); 
+    const resources = await getBlocks(pageId);
+    console.log(resources);
     return NextResponse.json({ resources });
   }
   

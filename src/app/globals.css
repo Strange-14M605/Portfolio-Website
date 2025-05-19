@@ -31,7 +31,7 @@ html,body{
 
 @media (max-width: 1145px) {
   html,body{
-    margin: 4%;
+    margin: 1%;
   } 
   .navbar {
     flex-direction: column; 
@@ -309,3 +309,5 @@ html,body{
   width: 24px;
   height: 24px;
 }
+
+/* Footer */
