@@ -21,8 +21,8 @@ export async function POST() {
 
       const title = page.properties.Page.title[0]?.plain_text || "Untitled";
       const tags = page.properties.Tags.multi_select.map(tag => tag.name);
-      const createdDate = new Date(page.properties["Created Date"].date.start);
-      const date = `${createdDate.getDate().toString().padStart(2, "0")}/${(lastEdited.getMonth() + 1).toString().padStart(2, "0")}/${lastEdited.getFullYear()}`;
+      const lastEdited = new Date(page.properties["Created Date"].date.start);
+      const date = `${lastEdited.getDate().toString().padStart(2, "0")}/${(lastEdited.getMonth() + 1).toString().padStart(2, "0")}/${lastEdited.getFullYear()}`;
       const status = page.properties.Status.status.name;
 
       return {
