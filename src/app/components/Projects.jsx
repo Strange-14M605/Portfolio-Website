@@ -8,7 +8,8 @@ export default function Projects() {
     <>
       <h2 className="project-heading">Projects</h2>
       {projects.map((project) => (
-        <a key={project.id} className="project-card">
+        <div key={project.id} className="project-card">
+        <a href={project.url}>
           <p className="project-title">
             <b>{project.name}</b>
           </p>
@@ -22,6 +23,7 @@ export default function Projects() {
             ))}
           </p>
         </a>
+        </div>
       ))}
     </>
   );

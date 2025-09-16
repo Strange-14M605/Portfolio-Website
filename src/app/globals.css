@@ -21,7 +21,7 @@ html,body{
 
 @media (max-width: 1145px) {
   html, body {
-    padding: 40px 10%;
+    padding: 40px 8%;
   }
 }
 
@@ -36,7 +36,7 @@ html,body{
 
 .navbar-title {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--text-color-primary);
   margin: 0;
 }
@@ -47,8 +47,8 @@ html,body{
 }
 
 .social-icon img {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
@@ -62,7 +62,7 @@ html,body{
     flex-direction: column; 
   }
   .navbar-title {
-    font-size: 1.5rem; 
+    font-size: 1.4rem; 
   }
   .social-icons{ 
     margin: 10px 0 0; 
@@ -98,31 +98,49 @@ html,body{
 .project-heading{
   font-size: 1.6rem;
   color: var(--text-color-primary);
-  margin: 0;
+  margin: 0 0 10px;
+}
+
+@media (max-width: 750px) {
+  .project-heading {
+    text-align: center; 
+    font-size: 1.2rem;
+  }
 }
 
 .project-card{
-  text-decoration: none;
-  color: inherit;
-  border-top: #1a1a1a 1px solid;
-  padding: 10px;
+  border-top: var(--text-color-primary) solid 1px;
+  padding: 20px 10px;
 }
 
-.project-card:hover{
+.project-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block; 
+}
+
+.project-card:hover {
   background-color: var(--accent-color-primary);
-  transition: background-color 0.3s ease;
+}
+
+.project-title{
+  margin: 0;
+}
+
+.year {
+  margin: 0;
 }
 
 .tags {
+  margin: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;   /* space between tags */
-  margin-top: 8px;
+  gap: 10px;  
 }
 
 .tag {
   padding: 4px 10px;
-  border: 1px solid #1a1a1a;
-  border-radius: 9999px; /* makes it pill-shaped */
+  border: var(--text-color-primary) solid 1px;
+  border-radius: 9999px; 
   font-size: 0.9rem;
 }
