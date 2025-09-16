@@ -1,30 +1,30 @@
 "use client";
 
 //components
-import ListBlogs from "./components/listBlogs";
-import Head from 'next/head'; //favicon
+import Projects from "./components/Projects";
+import Head from "next/head"; //favicon
 
 export default function Home() {
   return (
-<>
-    <Head>
+    <>
+      <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-  <section className="intro-section">
-    <h5 className="intro-text">Welcome to my <i>digital garden</i>. I share the things I like and the way I <i>grow</i>.</h5>
-    <h5 className="intro-text">I gotta say, this is less of a portfolio website and more of a <i>home for my untamed thoughts</i> that grow and evolve.</h5>
-  </section>
+      <section className="intro-section">
+        <p className="intro-text">
+          Welcome to my <i>online portfolio</i>. I am currently pursuing my
+          Bachelor's in Technology- Computer Science Engineering at{" "}
+          <i>PES University, Bengaluru, India</i>.
+        </p>
+        <p className="intro-text">
+          This is where you will get to know a little more about me, my work,
+          and my interests. Feel free to explore and connect with me through the
+          social media links in the navbar above!
+        </p>
+      </section>
 
-  <section className="blogs-section">
-    <ListBlogs />
-  </section>
-
-  <section className="gallery-section">
-    {/* Gallery - Future scope */}
-    {/* You can add your gallery component or image grid here in the future */}
-  </section>
-</>
-
+      <Projects />
+    </>
   );
 }

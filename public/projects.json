@@ -1,23 +1,35 @@
 [
     {
       "id": 1,
-      "name": "Portfolio website",
-      "type": "tech",
-      "description": "Built my own portfolio website using Next app",
-      "tags":["Next.js", "Webdev"],
+      "name": "Mood-Melody",
+      "description": "AI-Powered Real-Time Emotion-Based Music Generation & Recommendation",
+      "tags":["Generative Ai"],
       "year":2025,
-      "url":"",
-      "image":"/images/portfolio-website.png"
+      "url":"https://github.com/Strange-14M605/Mood-Melody"
     },
     {
         "id": 2,
-        "name": "Portfolio website2",
-        "type": "tech",
-        "description": "Built my own portfolio website using Next app",
-        "tags":["Next.js", "Webdev"],
+        "name": "Smart Home Automation System",
+        "description": "This project implements a Smart Home Automation System utilizing Python for the application logic and MySQL for database management. The system allows users to manage various smart home devices, log maintenance activities, and view detailed logs of device operations.",
+        "tags":["Python", "MySQL"],
         "year":2025,
-        "url":"https://github.com/Strange-14M605/Portfolio",
-        "image":"/images/portfolio-website.png"
-      }
+        "url":"https://github.com/Strange-14M605/Smart-Home-Automation-System-Using-MySQL-and-Python"
+      },
+      {
+      "id": 3,
+      "name": "GigUp - A Freelancing Platform",
+      "description": "GigUp is a full-stack freelancing platform built using Java Spring Boot, Thymeleaf, and MySQL. It aims to connect clients and freelancers in a secure and scalable environment.",
+      "tags":["Spring Boot", "Java"],
+      "year":2025,
+      "url":"https://github.com/Strange-14M605/GigUp"
+    },
+    {
+      "id": 4,
+      "name": "Portfolio website",
+      "description": "Built my own portfolio website using Next app",
+      "tags":["Next.js", "Webdev", "React"],
+      "year":2024,
+      "url":"https://github.com/Strange-14M605/Portfolio-Website"
+    }
   ]
   
