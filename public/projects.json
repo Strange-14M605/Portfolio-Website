@@ -1,35 +1,50 @@
 [
     {
       "id": 1,
+      "name": "Inventory Management System with Multi-Client Support",
+      "description": "Built a multi-client inventory management system with real-time transactions, secure Bcrypt authentication, concurrency control, role-based access, and  transaction handling for data integrity.",
+      "tags":["Python", "TCP", "Security", "Socket Programming"],
+      "year":2024,
+      "url":"https://github.com/Strange-14M605/A-Cool-Inventory-Management-System"
+    },
+    {
+        "id": 2,
+        "name": "Podcanotes: your podcast note-taker ",
+        "description": "Developed a full-stack note-taking web app with user authentication, CRUD operations, PostgreSQL integration showcasing skills in relational databases. ",
+        "tags":["Next.js", "Node.js", "Express.js", "Git", "PostgreSQL", "Full stack"],
+        "year":2024,
+        "url":"https://github.com/Strange-14M605/podcanotes"
+      },
+      {
+      "id": 3,
+      "name": "Cloned Voice Story Generator",
+      "description": "Developed an AI-powered storytelling tool that transforms user prompts into narrated audio with cloned voices and context-aware background sounds, supporting multiple languages and customizable parameters like speed, pitch, and pauses.",
+      "tags":["Python","Huggingface", "Pytorch", "Deep Learning"],
+      "year":2025
+    },
+    {
+      "id": 4,
       "name": "Mood-Melody",
-      "description": "AI-Powered Real-Time Emotion-Based Music Generation & Recommendation",
-      "tags":["Generative Ai"],
+      "description": "Built a Streamlit app that detects emotions via webcam (DeepFace) and generates dynamic, mood-enhancing music MusicGen); integrated Spotify API for personalized, mood-based song recommendations with optional mood transitions.",
+      "tags":["Python", "DeepFace"],
       "year":2025,
       "url":"https://github.com/Strange-14M605/Mood-Melody"
     },
     {
-        "id": 2,
-        "name": "Smart Home Automation System",
-        "description": "This project implements a Smart Home Automation System utilizing Python for the application logic and MySQL for database management. The system allows users to manage various smart home devices, log maintenance activities, and view detailed logs of device operations.",
-        "tags":["Python", "MySQL"],
-        "year":2025,
-        "url":"https://github.com/Strange-14M605/Smart-Home-Automation-System-Using-MySQL-and-Python"
-      },
-      {
-      "id": 3,
-      "name": "GigUp - A Freelancing Platform",
-      "description": "GigUp is a full-stack freelancing platform built using Java Spring Boot, Thymeleaf, and MySQL. It aims to connect clients and freelancers in a secure and scalable environment.",
-      "tags":["Spring Boot", "Java"],
+      "id": 5,
+      "name": "Containerized a Go-based URL Shortener",
+      "description": "Built and containerized a Go-based URL shortener using Docker with multi-stage builds, reducing image size from 1.74 GB to 30 MB.",
+      "tags":["Docker","SQLite"],
       "year":2025,
-      "url":"https://github.com/Strange-14M605/GigUp"
+      "url":"https://www.notion.so/Containerising-Uturn-Go-using-Docker-1ed93be5408480b0863fcc4c69ec8612?source=copy_link"
     },
-    {
-      "id": 4,
+        {
+      "id": 6,
       "name": "Portfolio website",
       "description": "Built my own portfolio website using Next app",
       "tags":["Next.js", "Webdev", "React"],
       "year":2024,
       "url":"https://github.com/Strange-14M605/Portfolio-Website"
-    }
+    },
   ]
   
