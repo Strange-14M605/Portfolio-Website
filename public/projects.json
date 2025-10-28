@@ -14,8 +14,8 @@
         "tags":["Next.js", "Node.js", "Express.js", "Git", "PostgreSQL", "Full stack"],
         "year":2024,
         "url":"https://github.com/Strange-14M605/podcanotes"
-      },
-      {
+    },
+    {
       "id": 3,
       "name": "Cloned Voice Story Generator",
       "description": "Developed an AI-powered storytelling tool that transforms user prompts into narrated audio with cloned voices and context-aware background sounds, supporting multiple languages and customizable parameters like speed, pitch, and pauses.",
@@ -38,13 +38,13 @@
       "year":2025,
       "url":"https://www.notion.so/Containerising-Uturn-Go-using-Docker-1ed93be5408480b0863fcc4c69ec8612?source=copy_link"
     },
-        {
+    {
       "id": 6,
       "name": "Portfolio website",
       "description": "Built my own portfolio website using Next app",
       "tags":["Next.js", "Webdev", "React"],
       "year":2024,
       "url":"https://github.com/Strange-14M605/Portfolio-Website"
-    },
+    }
   ]
   
