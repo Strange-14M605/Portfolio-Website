@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { useState, useEffect } from "react";
 
 export default function Navbar() {
@@ -21,7 +23,10 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <h1 className="navbar-title">🌱 Jova's Digital Portfolio</h1>
+      <Link href="/" className="nav-item">home</Link>
+      <Link href="/writing" className="nav-item">writing</Link>
+      <Link href="/reading" className="nav-item">reading</Link>
+      <Link href="/projects" className="nav-item">projects</Link>
 
       <div className="icon-set">
         {/* GitHub */}

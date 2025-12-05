@@ -45,6 +45,14 @@
       "tags":["Next.js", "Webdev", "React"],
       "year":2024,
       "url":"https://github.com/Strange-14M605/Portfolio-Website"
+    },
+    {
+      "id": 7,
+      "name": "Pardon_Me",
+      "description": "Pardon_Me is an AI Agents GitHub repository interpreter that turns complex codebases into clear, conversational explanations. It analyzes user intent, fetches live repo data, detects jargon, and delivers beginner-friendly insights like a teammate who already understands the entire project.",
+      "tags":["FastAPI", "AI Agents", "Google adk"],
+      "year":2025,
+      "url":"https://github.com/Strange-14M605/Pardon_Me"
     }
   ]
   

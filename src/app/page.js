@@ -1,7 +1,7 @@
 "use client";
 
 //components
-import Projects from "./components/Projects";
+import GenArt from "./components/GenArt";
 import Head from "next/head"; //favicon
 
 export default function Home() {
@@ -10,6 +10,11 @@ export default function Home() {
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <h1 className="navbar-title">🌱 Jova's Digital Portfolio</h1>
+      <div className="generation">
+      <GenArt />
+      </div>
 
       <section className="intro-section">
         <p className="intro-text">
@@ -23,8 +28,6 @@ export default function Home() {
           social media links in the navbar above!
         </p>
       </section>
-
-      <Projects />
     </>
   );
 }
