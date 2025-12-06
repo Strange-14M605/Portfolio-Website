@@ -61,5 +61,77 @@
         "rating": 3.5,
         "url": "https://www.goodreads.com/book/show/40381392-finale",
         "notes": "Definitely a fun read :) Would read it again!"
+    },
+    {
+        "id": 8,
+        "name": "The Inheritance Games",
+        "author": "Jennifer Lynn Barnes",
+        "finished": "12/07/2025",
+        "rating": 3.5,
+        "url": "https://www.goodreads.com/book/show/52439531-the-inheritance-games",
+        "notes": "Fairly good read- the Hawthorne brothers are so cool"
+    },
+    {
+        "id": 9,
+        "name": "The Hawthorne Legacy",
+        "author": "Jennifer Lynn Barnes",
+        "finished": "26/07/2025",
+        "rating": 3.5,
+        "url": "https://www.goodreads.com/book/show/50531218-the-hawthorne-legacy",
+        "notes": "Still obsessed with the Hawthorne brothers"
+    },
+    {
+        "id": 10,
+        "name": "The Final Gambit",
+        "author": "Jennifer Lynn Barnes",
+        "finished": "31/07/2025",
+        "rating": 4.0,
+        "url": "https://www.goodreads.com/book/show/58658940-the-final-gambit",
+        "notes": "What a cozy ending! I could see myself hosting a similar quest for fun if I were a Billionare."
+    },
+    {
+        "id": 11,
+        "name": "The Diary of a Young Girl",
+        "author": "Anne Frank",
+        "finished": "10/08/2025",
+        "rating": 4.5,
+        "url": "https://www.goodreads.com/book/show/127441416-the-diary-of-a-young-girl",
+        "notes": "Anne's diary is definitely one of my top reads this year! So emotional and encouraging, yet sad. Anne would've changed the world- she inspires me today to embrace my humanity and myself."
+    },
+    {
+        "id": 12,
+        "name": "Twilight",
+        "author": "Stephenie Meyer",
+        "finished": "12/08/2025",
+        "rating": 2.5,
+        "url": "https://www.goodreads.com/book/show/41865.Twilight",
+        "notes": "This is so trashy that I liked it. It wass fun listening to it while I practiced my painting- would highly recommend."
+    },
+    {
+        "id": 13,
+        "name": "New Moon",
+        "author": "Stephenie Meyer",
+        "finished": "26/08/2025",
+        "rating": 3.0,
+        "url": "https://www.goodreads.com/book/show/49041.New_Moon",
+        "notes": "Its become a routine- painting while Stephenie's book plays in the background- perfect way to spend an evening."
+    },
+    {
+        "id": 14,
+        "name": "The Song of Achilles",
+        "author": "Madeline Miller",
+        "finished": "22/08/2025",
+        "rating": 4.5,
+        "url": "https://www.goodreads.com/book/show/13623848-the-song-of-achilles",
+        "notes": "One of the best romances I've read all year. Also, I really want to dig deeper into Greek Mythology and the whole shazaam! Did you know that Alexander the Great idolised Achilles? He even believed that he was half god hiself. Can't wait to get my hands on another Madeline Miller book- probably Circe- I'd love to know how Odyssey is portrayed in it."
+    },
+    {
+        "id": 15,
+        "name": "The Alchemist",
+        "author": "Paulo Coelho",
+        "finished": "23/10/2025",
+        "rating": 2.0,
+        "url": "https://www.goodreads.com/book/show/18144590-the-alchemist",
+        "notes": "To be straight- not my cup of tea. That said, I can see why people would find it inspirational. I still don't understand why the book was named 'The Alchemist'?? I'm guessing there's some deeper meaning - as every chapter in this book does. I just can't get myself to ponder too much about it. Overall, it was okay. One thing I'd carry forward is how he mentions something along the line 'the whole universe it rooting for you whether you believe it or not'."
     }
 ]
