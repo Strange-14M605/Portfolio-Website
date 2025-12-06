@@ -7,7 +7,8 @@ tablet: 1145 */
 :root {
   --bg-color: #f2e8b6;
   --text-color: #1a1a1a;
-  --accent-color: #b7f889;
+  --text-color-2: #eee8cd;
+  --accent-color: rgb(238, 226, 148);
   --accent-color-2: #d6bd42;
   --font-primary: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -15,7 +16,8 @@ tablet: 1145 */
 .dark {
   --bg-color: #4a1919;
   --text-color: #eee8cd;
-  --accent-color: #8e2f2f;
+  --text-color-2: #1a1a1a;
+  --accent-color: #7e062cff;
 }
 
 html,
@@ -23,32 +25,16 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: var(--font-primary);
-  padding: 60px 16%;
+  padding: 40px 10%;
   margin: 0;
-  position: relative;
   min-height: 100vh;
+  position: relative;
+  z-index: 0; 
 }
 
-html::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("/bg.jpg") repeat;
-  background-size: auto;
-  mix-blend-mode: overlay;
-  opacity: 0.3;
-  pointer-events: none;
-  z-index: -1;
-}
-
-@media (max-width: 1145px) {
-  html,
-  body {
-    padding: 40px 8%;
-  }
+#page-content {
+  background-color: var(--bg-color);
+  padding: 5% 10%;
 }
 
 /* Navbar */
@@ -59,6 +45,7 @@ html::before {
   justify-content: space-between;
   align-items: center;
 }
+
 
 .nav-item {
   padding: 0 1rem;
@@ -73,11 +60,10 @@ html::before {
   transition: color 0.3s ease;
 }
 
-.navbar-title {
-  text-align: center;
+.page-title {
   font-size: 1.8rem;
   color: var(--text-color);
-  margin: 0;
+  padding: 40px 0 0;
 }
 
 .icon-set {
@@ -143,6 +129,65 @@ html::before {
   justify-content: center;
 }
 
+/* Reading */
+
+.reading-table {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 2fr 1.4fr 1fr 0.6fr 0.4fr;
+  align-items: center;
+  border-bottom: 1px solid var(--accent-color-2);
+}
+
+.row.header {
+  font-weight: 600;
+}
+
+.book_name {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.book_name a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.book_name a:hover {
+  color: var(--accent-color-2); /* subtle highlight */
+  text-decoration: underline;
+}
+
+
+.notes {
+  grid-column: 1 / -1;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.notes.show {
+  opacity: 1;
+  height: auto;
+  padding: 10px 10px 0 ;
+  border-left:2px solid var(--accent-color-2) ;
+}
+
+.read-btn {
+  grid-column: 1 / -1;
+  text-align: left;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
 /* Projects */
 
 .project-heading {
@@ -180,10 +225,6 @@ html::before {
   background-color: var(--accent-color);
   transition: background-color 0.3s ease;
   cursor: pointer;
-}
-
-.right .project-title {
-  margin: 0;
 }
 
 .year {
@@ -224,38 +265,70 @@ html::before {
 /* Generative Art */
 
 #canvas-wrapper {
-  width: 100%; /* or whatever size */
-  max-width: 600px;
-  align-items: center;
+  position: fixed;
+  inset: 0;            
+  z-index: -999;         
+  overflow: hidden;
+}
+
+#canvas-wrapper canvas {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  opacity: 80%;
+  cursor: pointer;
 }
 
 #art {
-  width: 100%; /* responsive */
-  height: auto; /* keep aspect ratio */
+  width: 100%; 
+  height: auto; 
   display: block;
 }
 
-/* The '?' icon */
+.bg-tip {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 320px;
+  font-size: 0.8rem;
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  padding: 1%;
+}
+
+.bg-tip {
+  position: fixed;
+}
+
 .info-icon {
-  position: relative;
+  font-weight: bold;
+  font-size: 0.8rem;
+  position: relative; 
 }
 
 .tip {
-  opacity: 0;
   position: absolute;
-  top: -75px;
-  left: 75%;
-  width: 300px;
-  transform: translateX(-50%);
-  transition: opacity 0.3s ease;
-  background-color: var(--accent-color);
-  padding: 5px 10px;
-  poroer-events: none; 
+  bottom: 100%; 
+  right: 0;
+  background: var(--text-color);
+  color:  var(--bg-color);
+  padding: 10px 14px;
+  max-width: 324px;
+  font-size: 0.8rem;
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  white-space: normal;
 }
 
-.info-icon:hover .tip {
+.info-icon:hover + .tip {
   opacity: 1;
+  transform: translateY(0);
 }
+
 
 /* Footer */
 

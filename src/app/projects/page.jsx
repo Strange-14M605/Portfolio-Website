@@ -13,9 +13,7 @@ export default function ProjectsPage() {
 
   return (
     <>
-      <h2 className="project-heading">Projects</h2>
-      <p>A showcase of things I’ve built — playful, technical, or both.</p>
-
+      <h2 className="page-title">Projects</h2>
       {sortedYears.map((year) => (
         <div key={year} className="year-group">
           <h3 className="year-heading">{year}</h3>

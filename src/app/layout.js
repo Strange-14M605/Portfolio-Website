@@ -10,10 +10,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <div id="page-content">
+          <Navbar />
+          {children}
+          <Footer />
+        </div>
         <GenArt />
-        <Navbar />
-        {children}
-        <Footer />
       </body>
     </html>
   );

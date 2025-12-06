@@ -1,9 +1,7 @@
-// canvas + context created when called from component, not here
 export function initSketch(canvas) {
   const context = canvas.getContext("2d");
 
   const p = {
-    // same mini p5 object but using this context, not global
     PI: Math.PI,
     HALF_PI: Math.PI / 2,
     random: (a, b) => {
@@ -28,9 +26,9 @@ export function initSketch(canvas) {
     },
   };
 
-  function drawPetalTile(r, cream, sky) {
+  function drawPetalTile(r, cream, pink) {
     p.noStroke();
-    p.fill(sky);
+    p.fill(pink);
 
     const petals = 8;
     for (let i = 0; i < petals; i++) {
@@ -41,7 +39,7 @@ export function initSketch(canvas) {
     p.fill(cream);
     p.circle(0, 0, r * 0.6);
   }
-  function drawDiamondTile(r, cream, sky) {
+  function drawDiamondTile(r, cream, pink) {
     p.noStroke();
 
     // Outer star
@@ -58,7 +56,7 @@ export function initSketch(canvas) {
     }
 
     // Inner diamond
-    p.fill(sky);
+    p.fill(pink);
     context.beginPath();
     context.moveTo(0, -r * 0.5);
     context.lineTo(r * 0.5, 0);
@@ -67,10 +65,10 @@ export function initSketch(canvas) {
     context.closePath();
     context.fill();
   }
-  function drawArcTile(r, cream, sky) {
+  function drawArcTile(r, cream, pink) {
     p.noStroke();
 
-    p.fill(sky);
+    p.fill(pink);
     for (let i = 0; i < 4; i++) {
       context.beginPath();
       context.arc(0, 0, r * 0.9, 0, Math.PI / 2);
@@ -84,11 +82,8 @@ export function initSketch(canvas) {
 
   function resizeCanvas() {
     const parent = document.getElementById("canvas-wrapper");
-    const width = parent.clientWidth;
-    const height = 300;
-
-    canvas.width = width;
-    canvas.height = height;
+    canvas.width = parent.clientWidth;
+    canvas.height = parent.clientHeight;
   }
 
   function setup() {
@@ -97,14 +92,8 @@ export function initSketch(canvas) {
   }
 
   function draw() {
-    // Colors inspired by Indian tile palettes
-    const cream = "#f9f4e7";
-    // const cream = "#0a1d4a";
-    const sky = "#4aa3d9";
-
-    // fill background
-    // context.fillStyle = cream;
-    // context.fillRect(0, 0, canvas.width, canvas.height);
+    const cream = "rgb(238, 226, 148)";
+    const pink = "#7e062cff";
 
     const tileSize = 120;
     const cols = Math.ceil(canvas.width / tileSize);
@@ -115,12 +104,11 @@ export function initSketch(canvas) {
         p.push();
         p.translate(x * tileSize + tileSize / 2, y * tileSize + tileSize / 2);
 
-        // pick a tile type
         const tileType = p.random([1, 2, 3]);
 
-        if (tileType === 1) drawPetalTile(tileSize / 2, cream, sky);
-        if (tileType === 2) drawDiamondTile(tileSize / 2, cream, sky);
-        if (tileType === 3) drawArcTile(tileSize / 2, cream, sky);
+        if (tileType === 1) drawPetalTile(tileSize / 2, cream, pink);
+        if (tileType === 2) drawDiamondTile(tileSize / 2, cream, pink);
+        if (tileType === 3) drawArcTile(tileSize / 2, cream, pink);
 
         p.pop();
       }

@@ -1,7 +1,6 @@
 "use client";
 
 //components
-import GenArt from "./components/GenArt";
 import Head from "next/head"; //favicon
 
 export default function Home() {
@@ -11,10 +10,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1 className="navbar-title">🌱 Jova's Digital Portfolio</h1>
-      <div className="generation">
-      <GenArt />
-      </div>
+      <h1 className="page-title">Jova's Digital Portfolio</h1>
 
       <section className="intro-section">
         <p className="intro-text">
