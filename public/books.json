@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "name": "Fourth Wing",
+        "author": "Rebecca Yarros",
+        "finished": "20/11/2025",
+        "rating": 5,
+        "url": "https://www.goodreads.com/book/show/61431922-fourth-wing",
+        "notes": "A very fun read!"
+    },
+    {
+        "id": 2,
+        "name": "Iron Flame",
+        "author": "Rebecca Yarros",
+        "finished": "22/11/2025",
+        "rating": 4,
+        "url": "https://www.goodreads.com/book/show/90202302-iron-flame",
+        "notes": "A very fun read!A very fun read!A very fun read!A very fun read!A very fun read!A very fun read!A very fun read!A very fun read!A very fun read!A very fun read!"
+    },
+    {
+        "id": 3,
+        "name": "As Good As Dead",
+        "author": "Holly Jackson",
+        "finished": "10/01/2025",
+        "rating": 2.5,
+        "url": "https://www.goodreads.com/book/show/56905097-as-good-as-dead",
+        "notes": "Not my cup of tea."
+    },
+    {
+        "id": 4,
+        "name": "Caraval",
+        "author": "Stephanie Garber",
+        "finished": "14/02/2025",
+        "rating": 3.0,
+        "url": "https://www.goodreads.com/book/show/27883214-caraval",
+        "notes": "Loved the vivid descriptions in the book. It was very magical."
+    },
+    {
+        "id": 5,
+        "name": "The Silent Patient",
+        "author": "Alex Michaelides",
+        "finished": "19/02/2025",
+        "rating": 4.5,
+        "url": "https://www.goodreads.com/book/show/40097951-the-silent-patient",
+        "notes": "This book was SO good! I think I could've pieced it all together by the end but I was reading it very absent mindedly I guess. It was very thoughtfully written- the gut wrenching ending OMG."
+    },
+    {
+        "id": 6,
+        "name": "Legendary",
+        "author": "Stephanie Garber",
+        "finished": "06/04/2025",
+        "rating": 3.5,
+        "url": "https://www.goodreads.com/book/show/36329818-legendary",
+        "notes": "I definitely liked this part more than part one- though, I must appreciate the world building done in Caraval that made this one such a good read! I am really intrigued by Jacks."
+    },
+    {
+        "id": 7,
+        "name": "Finale",
+        "author": "Stephanie Garber",
+        "finished": "01/05/2025",
+        "rating": 3.5,
+        "url": "https://www.goodreads.com/book/show/40381392-finale",
+        "notes": "Definitely a fun read :) Would read it again!"
+    }
+]
