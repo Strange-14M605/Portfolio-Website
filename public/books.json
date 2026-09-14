@@ -12,7 +12,7 @@
         "id": 2,
         "name": "Iron Flame",
         "author": "Rebecca Yarros",
-        "finished": "22/11/2025",
+        "finished": "27/01/2026",
         "rating": 4,
         "url": "https://www.goodreads.com/book/show/90202302-iron-flame",
         "notes": "A very fun read!A very fun read!A very fun read!A very fun read!A very fun read!A very fun read!A very fun read!A very fun read!A very fun read!A very fun read!"
@@ -133,5 +133,50 @@
         "rating": 2.0,
         "url": "https://www.goodreads.com/book/show/18144590-the-alchemist",
         "notes": "To be straight- not my cup of tea. That said, I can see why people would find it inspirational. I still don't understand why the book was named 'The Alchemist'?? I'm guessing there's some deeper meaning - as every chapter in this book does. I just can't get myself to ponder too much about it. Overall, it was okay. One thing I'd carry forward is how he mentions something along the line 'the whole universe it rooting for you whether you believe it or not'."
+    },
+    {
+        "id": 16,
+        "name": "Heart Lamp",
+        "author": "Banu Mushtaq",
+        "finished": "11/04/2026",
+        "rating": 3.0,
+        "url": "https://www.goodreads.com/en/book/show/205544315-heart-lamp",
+        "notes": "This book filled me with so much rage and I had a hard time digesting a lot of it. I also felt really scared at certain parts of this book. Overall, I now have had a glimpse into the realities of women and the societies they live it. The fact that it still happens in the world angers me."
+    },
+    {
+        "id": 17,
+        "name": "Before the coffee gets cold",
+        "author": "Toshikazu Kawaguchi",
+        "finished": "09/05/2026",
+        "rating": 3.0,
+        "url": "https://www.goodreads.com/book/show/44421460-before-the-coffee-gets-cold?from_search=true&from_srp=true&qid=ceInWMI2sM&rank=1",
+        "notes": "Loved this book!"
+    },
+    {
+        "id": 18,
+        "name": "Onyx Storm",
+        "author": "Rebecca Yarros",
+        "finished": "28/06/2026",
+        "rating": 3.5,
+        "url": "https://www.goodreads.com/book/show/209439446-onyx-storm?from_search=true&from_srp=true&qid=sgzVVp9QAJ&rank=1",
+        "notes": "I liked how we get to see more of the outside world, that is something I will always like in world building. Apart from that, from the characters POV, the book seemed a little repetitive (exculding Adarna\u001b[D\u001b[D\u001b[D\u001b[A) , she is growing to be a beautiful dragon)"
+    },
+    {
+        "id": 19,
+        "name": "To Kill a MockingBird",
+        "author": "Harper Lee",
+        "finished": "28/07/2026",
+        "rating": 4.0,
+        "url": "https://www.goodreads.com/book/show/56916837-to-kill-a-mockingbird?ref=nav_sb_ss_1_7",
+        "notes": "One of my top reads this year! I stepped out of my comfort zone and it was totally worth it. Now I want to read more diverse genres and explore more of what authors have to give. Anywho000, about the book... the way the characters were explored and how it all came together at the end was absolutely beautiful to experience! It was a ride. I liked Atticus Finch's character the most and I think we all have something to learn from him. Thinking about going deeper into this books background and learn up on it."
+    },
+    {
+        "id": 20,
+        "name": "Circe",
+        "author": "Madeline Miller",
+        "finished": "23/08/2026",
+        "rating": 3.5,
+        "url": "https://www.goodreads.com/book/show/35959740-circe?ref=nav_sb_ss_1_5",
+        "notes": "Pairing this with the release of the Odyssey :)"
     }
 ]

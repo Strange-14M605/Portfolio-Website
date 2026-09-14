@@ -53,6 +53,14 @@
       "tags":["FastAPI", "AI Agents", "Google adk"],
       "year":2025,
       "url":"https://github.com/Strange-14M605/Pardon_Me"
+    },
+        {
+      "id": 8,
+      "name": "One More Chapter",
+      "description": "This is a mini project using the Book-Crossing Dataset to create a minimal data, training and deployment pipeline.",
+      "tags":["Pandas", "DuckDB", "SQL", "Airflow", "FastAPI"],
+      "year":2026,
+      "url":"https://github.com/Strange-14M605/One_More_Chapter"
     }
   ]
   
