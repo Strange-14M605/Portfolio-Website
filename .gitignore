@@ -25,6 +25,9 @@
 .DS_Store
 *.pem
 
+# Windows/MSYS crash dumps
+bash.exe.stackdump
+
 # debug
 npm-debug.log*
 yarn-debug.log*
