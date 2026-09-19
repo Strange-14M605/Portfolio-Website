@@ -61,8 +61,6 @@ export default function GalleryPage() {
 
   return (
     <section className="gallery-page">
-      <div className="gallery-divider" />
-
       <div className="gallery-layout">
         <div className="gallery-stage-wrap">
           <button

@@ -25,7 +25,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: var(--font-primary);
-  padding: 40px 10%;
+  padding: 10px 5%;
   margin: 0;
   min-height: 100vh;
   position: relative;
@@ -34,7 +34,7 @@ body {
 
 #page-content {
   background-color: var(--bg-color);
-  padding: 5% 10%;
+  padding: 5% 5%;
 }
 
 /* Navbar */
@@ -61,12 +61,6 @@ body {
   justify-content: center;
   width: 100%;
   gap: 1.2rem;
-}
-
-.nav-divider {
-  flex: 1;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.5);
 }
 
 .nav-links {
@@ -153,6 +147,50 @@ body {
 @media (max-width: 750px) {
   .intro-text {
     text-align: center;
+  }
+}
+
+/* Intro Video Section */
+.intro-video-section {
+  margin: 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.intro-video {
+  width: 100%;
+  max-width: 980px;
+  height: auto;
+  display: block;
+  /* border-radius: 12px; */
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  background: #000; /* fallback while loading */
+  object-fit: cover;
+}
+
+@media (max-width: 1145px) {
+  .intro-video {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 750px) {
+  .intro-video {
+    max-width: 100%;
+    /* border-radius: 8px; */
+  }
+  .intro-video-section {
+    padding: 0 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Respect reduced motion preferences */
+  .intro-video {
+    animation: none;
   }
 }
 
@@ -303,10 +341,10 @@ body {
   letter-spacing: 0.02em;
 }
 
-.gallery-divider {
+.horizontal-divider {
+  width: 100%;
   height: 1px;
-  background: rgba(0, 0, 0, 0.8);
-  margin: 18px 0 28px;
+  background: var(--text-color);
 }
 
 .gallery-layout {
@@ -326,7 +364,7 @@ body {
 
 .gallery-stage {
   width: min(100%, 520px);
-  aspect-ratio: 1 / 1;
+  /* aspect-ratio: 1 / 1; */
   background: rgba(130, 130, 130, 0.38);
   border: 1px solid rgba(0, 0, 0, 0.2);
   display: flex;

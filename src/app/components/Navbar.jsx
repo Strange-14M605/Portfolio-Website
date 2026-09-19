@@ -24,6 +24,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-title">Jova Varghese</div>
+      <div className="horizontal-divider"></div>
 
       <div className="nav-bar">
         <div className="nav-links">
@@ -62,6 +63,8 @@ export default function Navbar() {
           </button>
         </div>
       </div>
+
+       <div className="horizontal-divider"></div>
     </nav>
   );
 }

@@ -3,6 +3,7 @@
 //components
 import Head from "next/head"; //favicon
 import ContactForm from "./components/ContactForm";
+import { getIntroVideoUrl } from '@/supabase';
 
 export default function Home() {
   return (
@@ -26,6 +27,17 @@ export default function Home() {
         </p>
       </section>
 
+      <section className="intro-video-section">
+        <video
+          className="intro-video"
+          src={getIntroVideoUrl()}
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+      </section>
+      
       <section>
           <ContactForm />
       </section>

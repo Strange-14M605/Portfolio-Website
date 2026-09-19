@@ -43,3 +43,8 @@ export type InstagramPost = {
   post_url: string;
   created_at: string;
 };
+
+// src/lib/supabase.ts
+export function getIntroVideoUrl() {
+  return `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/profile_video/intro.mp4`;
+}
