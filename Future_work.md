@@ -1,0 +1,1 @@
+1. add a cron job to extract latest insta posts instead of manual db update

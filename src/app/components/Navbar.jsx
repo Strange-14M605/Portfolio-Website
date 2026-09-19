@@ -24,9 +24,10 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <Link href="/" className="nav-item">home</Link>
-      <Link href="/writing" className="nav-item">writing</Link>
-      <Link href="/reading" className="nav-item">reading</Link>
-      <Link href="/projects" className="nav-item">projects</Link>
+        <Link href="/projects" className="nav-item">projects</Link>
+        <Link href="/shelf" className="nav-item">shelf</Link>
+        <Link href="/gallery" className="nav-item">gallery</Link>
+        <Link href="/socials" className="nav-item">socials</Link>
 
       <div className="icon-set">
         {/* GitHub */}
