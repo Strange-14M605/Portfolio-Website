@@ -23,39 +23,44 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <Link href="/" className="nav-item">home</Link>
-        <Link href="/projects" className="nav-item">projects</Link>
-        <Link href="/shelf" className="nav-item">shelf</Link>
-        <Link href="/gallery" className="nav-item">gallery</Link>
+      <div className="navbar-title">Jova Varghese</div>
 
-      <div className="icon-set">
-        {/* GitHub */}
+      <div className="nav-bar">
+        <div className="nav-links">
+          <Link href="/" className="nav-item">home</Link>
+          <Link href="/projects" className="nav-item">projects</Link>
+          <Link href="/shelf" className="nav-item">shelf</Link>
+          <Link href="/gallery" className="nav-item">gallery</Link>
+        </div>
 
-        <a
-          href="https://github.com/Strange-14M605"
-          target="_blank"
-          rel="noopener noreferrer"
+        <div className="icon-set">
+          {/* GitHub */}
+
+          <a
+            href="https://github.com/Strange-14M605"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-          <i className="bi bi-github icon"></i>
-        </a>
+            <i className="bi bi-github icon"></i>
+          </a>
 
-        {/* LinkedIn */}
-        <a
-          href="https://www.linkedin.com/in/jova-varghese/"
-          target="_blank"
-          rel="noopener noreferrer"
+          {/* LinkedIn */}
+          <a
+            href="https://www.linkedin.com/in/jova-varghese/"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-          <i className="bi bi-linkedin icon"></i>
-        </a>
+            <i className="bi bi-linkedin icon"></i>
+          </a>
 
+          {/* Theme Toggle */}
 
-        {/* Theme Toggle */}
-
-        <button onClick={toggleDarkMode} className="toggle-button">
-          {darkMode ? 
-          <i className="bi bi-sun-fill icon"></i> : 
-          <i className="bi bi-moon-fill icon"></i>}
-        </button>
+          <button onClick={toggleDarkMode} className="toggle-button">
+            {darkMode ?
+              <i className="bi bi-sun-fill icon"></i> :
+              <i className="bi bi-moon-fill icon"></i>}
+          </button>
+        </div>
       </div>
     </nav>
   );
