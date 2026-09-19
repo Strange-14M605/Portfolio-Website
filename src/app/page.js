@@ -2,6 +2,7 @@
 
 //components
 import Head from "next/head"; //favicon
+import ContactForm from "./components/ContactForm";
 
 export default function Home() {
   return (
@@ -23,6 +24,10 @@ export default function Home() {
           and my interests. Feel free to explore and connect with me through the
           social media links in the navbar above!
         </p>
+      </section>
+
+      <section>
+          <ContactForm />
       </section>
     </>
   );

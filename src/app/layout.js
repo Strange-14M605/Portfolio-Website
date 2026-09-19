@@ -5,7 +5,6 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import GenArt from "./components/GenArt";
 import Footer from "./components/Footer";
-import ContactForm from "./components/ContactForm";
 
 export default function RootLayout({ children }) {
   return (
@@ -13,7 +12,6 @@ export default function RootLayout({ children }) {
       <body>
         <div id="page-content">
           <Navbar />
-          <ContactForm />
           {children}
           <Footer />
         </div>

@@ -27,7 +27,6 @@ export default function Navbar() {
         <Link href="/projects" className="nav-item">projects</Link>
         <Link href="/shelf" className="nav-item">shelf</Link>
         <Link href="/gallery" className="nav-item">gallery</Link>
-        <Link href="/socials" className="nav-item">socials</Link>
 
       <div className="icon-set">
         {/* GitHub */}
