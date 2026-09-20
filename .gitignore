@@ -25,6 +25,9 @@
 .DS_Store
 *.pem
 
+# Windows/MSYS crash dumps
+bash.exe.stackdump
+
 # debug
 npm-debug.log*
 yarn-debug.log*
@@ -41,5 +44,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-#prompts reference
+#prompts & pw reference
 prompts.txt
+passwords.txt
