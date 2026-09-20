@@ -26,22 +26,28 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex gap-2">
-      <input
-        type="text"
-        placeholder="Drop a 'Hi'..."
-        value={content}
-        onChange={(e) => setContent(e.target.value)}
-        className="flex-1 bg-neutral-200 dark:bg-neutral-800 px-3 py-2 text-sm rounded outline-none focus:ring-1 ring-neutral-400"
-      />
-      <button
-        type="submit"
-        disabled={loading}
-        className="text-sm font-semibold hover:underline disabled:opacity-50"
-      >
-        {loading ? 'Sending...' : 'Send'}
-      </button>
-      {status === 'success' && <span className="text-xs text-green-500 self-center">Sent!</span>}
-    </form>
+
+    <section className="landing-contact" id="socials">
+      <div className="contact-label">Drop a 'Hi' and let's connect:</div>
+      <form onSubmit={handleSubmit} className="flex gap-2">
+        <input
+          type="text"
+          placeholder="Drop a 'Hi'..."
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+          className="flex-1 bg-neutral-200 dark:bg-neutral-800 px-3 py-2 text-sm rounded outline-none focus:ring-1 ring-neutral-400"
+        />
+        <button
+          type="submit"
+          disabled={loading}
+          className="text-sm font-semibold hover:underline disabled:opacity-50"
+        >
+          {loading ? 'Sending...' : 'Send'}
+        </button>
+        {status === 'success' && <span className="text-xs text-green-500 self-center">Sent!</span>}
+      </form>
+    </section>
+
+
   );
 }
