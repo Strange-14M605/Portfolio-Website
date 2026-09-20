@@ -5,7 +5,6 @@ import { getIntroVideoUrl } from '@/supabase';
 export default function Home() {
   return (
     <main className="landing-shell">
-      <div className="horizontal-divider" />
 
       <section className="landing-hero">
         <section className="intro-video-section">
