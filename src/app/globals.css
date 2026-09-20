@@ -359,10 +359,11 @@ body {
 }
 
 .tag {
-  padding: 4px 10px;
-  border: var(--text-color) solid 1px;
+  display: inline-block;
+  padding: 5px 12px;
+  border: 1px solid var(--text-color);
   border-radius: 9999px;
-  font-size: 0.9rem;
+  font-size: 0.82rem;
 }
 
 .year-heading {
@@ -374,21 +375,20 @@ body {
   padding: 0 10px;
 }
 
-.gallery-page {
-  padding-top: 24px;
+.gallery-intro {
+  padding: 20px 20px 0;
 }
 
-.gallery-header-row {
-  width: 100%;
-  text-align: center;
-  margin-top: 8px;
+.gallery-instagram-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  text-decoration: none;
 }
 
-.gallery-name {
-  margin: 0;
-  font-size: clamp(1.7rem, 1.4rem + 0.8vw, 2.3rem);
-  font-weight: 500;
-  letter-spacing: 0.02em;
+.gallery-instagram-link:hover {
+  color: var(--accent-color-2);
 }
 
 .horizontal-divider {
@@ -468,8 +468,9 @@ body {
   display: grid;
   grid-template-columns: minmax(360px, 1.2fr) minmax(220px, 0.7fr);
   align-items: center;
+  padding: 44px 0;
   gap: clamp(32px, 4vw, 80px);
-  min-height: 520px;
+  min-height: 200px;
 }
 
 .gallery-stage-wrap {
@@ -481,9 +482,6 @@ body {
 
 .gallery-stage {
   width: min(100%, 520px);
-  /* aspect-ratio: 1 / 1; */
-  background: rgba(130, 130, 130, 0.38);
-  border: 1px solid rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -497,23 +495,18 @@ body {
   object-fit: cover;
 }
 
-.gallery-placeholder {
-  color: rgba(26, 26, 26, 0.6);
-  letter-spacing: 0.04em;
-}
-
 .gallery-arrow {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   background: transparent;
   color: var(--text-color);
   border: none;
-  font-size: 3rem;
-  line-height: 1;
+  font-size: 2rem;
   cursor: pointer;
-  padding: 0;
-  opacity: 0.9;
+}
+
+.gallery-arrow:hover {
+  color: var(--accent-color-2);
+  transition: color 0.3s ease;
 }
 
 .gallery-arrow:disabled {
@@ -522,39 +515,11 @@ body {
 }
 
 .gallery-arrow-left {
-  left: -42px;
+  left: -20px;
 }
 
 .gallery-arrow-right {
-  right: -42px;
-}
-
-.gallery-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  min-height: 240px;
-  justify-content: center;
-}
-
-.gallery-field {
-  margin: 0;
-  font-size: clamp(1.05rem, 0.95rem + 0.3vw, 1.5rem);
-  line-height: 1.5;
-}
-
-.gallery-title {
-  font-size: clamp(1.2rem, 1rem + 0.35vw, 1.7rem);
-}
-
-.gallery-description {
-  max-width: 28ch;
-  line-height: 1.6;
-}
-
-.gallery-empty {
-  margin: 0;
-  font-size: 1.1rem;
+  right: -20px;
 }
 
 @media (max-width: 750px) {

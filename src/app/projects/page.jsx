@@ -77,7 +77,7 @@ export default function ProjectsPage() {
                   <a href={project.url} target="_blank" rel="noopener noreferrer">
                     <div className="project-grid">
                       <div className="left">
-                        <p className="project-title">
+                        <p>
                           <b>{project.name}</b>
                         </p>
                       </div>

@@ -17,7 +17,7 @@ const normalizePiece = (piece) => {
     name: piece?.name || piece?.title || "<Name of the art piece>",
     date: piece?.date || piece?.created_at || piece?.year || "",
     medium: piece?.medium || piece?.material || "Medium",
-    description: piece?.description || piece?.notes || "",
+    description: piece?.image_description || piece?.notes || "",
     imageUrl: imageUrl.trim(),
   };
 };
@@ -60,7 +60,22 @@ export default function GalleryPage() {
   };
 
   return (
-    <section className="gallery-page">
+    <section>
+      <header>
+        <p className="gallery-intro">
+          If you know me in person then you would know that I love art and design. Here are a couple of my favorite projects.
+          I also try to maintain a insta page with my latest explorations in art, travel, vlogging, etc. here:
+          <a
+            href="https://www.instagram.com/hot.off.my.mind/"
+            target="_blank"
+            rel="noreferrer"
+            className="gallery-instagram-link"
+          >
+            <i className="bi bi-instagram"></i>  <i><u>hot.off.my.mind</u></i>
+          </a>
+        </p>
+      </header>
+
       <div className="gallery-layout">
         <div className="gallery-stage-wrap">
           <button
@@ -94,22 +109,22 @@ export default function GalleryPage() {
           </button>
         </div>
 
-        <div className="gallery-meta">
+        <div>
           {loading ? (
             <p>Loading...</p>
           ) : currentPiece ? (
             <>
-              <p className="gallery-field gallery-title">{currentPiece.name}</p>
+              <p><b><i>{currentPiece.name}</i></b></p>
               {currentPiece.date ? (
-                <p className="gallery-field">{currentPiece.date}</p>
+                <p>{currentPiece.date}</p>
               ) : null}
-              <p className="gallery-field">{currentPiece.medium}</p>
+              <p className="tag">{currentPiece.medium}</p>
               {currentPiece.description ? (
-                <p className="gallery-field gallery-description">{currentPiece.image_description}</p>
+                <p>{currentPiece.description}</p>
               ) : null}
             </>
           ) : (
-            <p className="gallery-empty">No pieces in the gallery yet.</p>
+            <p>No pieces in the gallery yet.</p>
           )}
         </div>
       </div>
