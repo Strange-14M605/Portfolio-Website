@@ -37,7 +37,7 @@ export default function Home() {
       <div className="horizontal-divider" />
 
       <section className="landing-story">
-        <div className="">My journey (๑ᵔ⤙ᵔ๑) </div>
+        <div>My journey (๑ᵔ⤙ᵔ๑) </div>
         <p>
           I graduated with a Bachelor&apos;s in Technology- Computer Science Engineering
           from PES University, Bengaluru, India, in 2026. Since then I have joined
@@ -49,7 +49,7 @@ export default function Home() {
       <div className="horizontal-divider" />
 
       <section className="landing-story">
-        <div className="">What it is like working with me . ݁₊ ⊹ </div>
+        <div>What it is like working with me . ݁₊ ⊹ </div>
         <p>
           I am a fun person with lots of ambition and who never backs down from
           talking in front of people and brainstorming. With previous experience in
@@ -60,7 +60,11 @@ export default function Home() {
 
       <div className="horizontal-divider" />
 
-      <ContactForm />
+      <section className="landing-story">
+        <div >Drop a 'Hi' and let's connect:</div>
+        <ContactForm />
+      </section>
+
     </main>
   );
 }

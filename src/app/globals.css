@@ -239,84 +239,14 @@ body {
   display: grid;
   grid-template-columns: minmax(180px, 0.72fr) minmax(0, 1.6fr);
   align-items: start;
-  padding: 40px 0;
+  padding: 40px 20px;
 }
 
 .landing-contact {
   display: grid;
-  grid-template-columns: minmax(210px, 0.8fr) minmax(0, 1.9fr);
+  grid-template-columns: minmax(180px, 0.72fr) minmax(0, 1.6fr);
   gap: clamp(18px, 3vw, 36px);
-  align-items: center;
   padding: 20px 0px;
-  /* padding-bottom: 6px; */
-}
-
-.contact-label {
-  font-size: 1.05rem;
-  font-weight: 500;
-}
-
-.landing-contact-form {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 0.75rem;
-  align-items: center;
-  width: 100%;
-}
-
-.landing-contact-input {
-  width: 100%;
-  min-height: 44px;
-  padding: 0.7rem 0.9rem;
-  border: none;
-  background: rgba(0, 0, 0, 0.12);
-  color: var(--text-color);
-  font: inherit;
-  box-sizing: border-box;
-}
-
-.landing-contact-input::placeholder {
-  color: rgba(26, 26, 26, 0.75);
-}
-
-.landing-contact-input:focus {
-  outline: 1px solid rgba(26, 26, 26, 0.35);
-}
-
-.landing-contact-button {
-  background: transparent;
-  border: none;
-  color: var(--text-color);
-  font: inherit;
-  font-weight: 600;
-  cursor: pointer;
-  padding: 0.2rem 0.1rem;
-}
-
-.landing-contact-status {
-  font-size: 0.75rem;
-  color: #0d7f3f;
-  align-self: center;
-}
-
-@media (max-width: 750px) {
-  .landing-hero,
-  .landing-story,
-  .landing-contact {
-    grid-template-columns: 1fr;
-  }
-
-  .landing-hero {
-    gap: 16px;
-  }
-
-  .landing-hero-visual {
-    min-height: 180px;
-  }
-
-  .landing-contact-form {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* Reading */
